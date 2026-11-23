@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Libo · Life, Books, Print</title>
+<meta name="description" content="Libo is a small independent publishing house. Its imprints make practical, carefully made books for everyday life.">
+<link rel="canonical" href="https://liboprint.com/">
+<meta property="og:title" content="Libo · Life, Books, Print">
+<meta property="og:description" content="A small independent publishing house and the home of Bloom Editorial.">
+<meta property="og:url" content="https://liboprint.com/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F2A2E'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23F4EFE6'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Libo","url":"https://liboprint.com/",
+ "subOrganization":[{"@type":"Organization","name":"Bloom Editorial","url":"https://bloom.liboprint.com/"}]}
+</script>
+<style>
+  :root{--ink:#1F2A2E;--muted:#5B6468;--paper:#F4EFE6;--line:#D9D1C3;--accent:#8A5A44}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--paper);color:var(--ink);font:400 17px/1.65 'DM Sans',system-ui,sans-serif;min-height:100dvh;display:flex;flex-direction:column}
+  .wrap{width:100%;max-width:880px;margin:0 auto;padding:0 24px}
+  header{padding:40px 0 0}
+  .mark{font:600 30px/1 'Cormorant Garamond',Georgia,serif;letter-spacing:.02em}
+  .mark span{color:var(--accent)}
+  main{flex:1;padding:96px 0 72px}
+  h1{font:500 clamp(40px,7vw,68px)/1.04 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em;max-width:14ch;text-wrap:balance}
+  h1 em{color:var(--accent)}
+  .lede{margin-top:28px;max-width:56ch;color:var(--muted);font-size:19px;text-wrap:pretty}
+  .name{margin-top:20px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  h2{margin-top:88px;font:500 14px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .imprint{display:grid;grid-template-columns:1fr auto;gap:8px 32px;align-items:end;padding:32px 0;border-bottom:1px solid var(--line);color:inherit;text-decoration:none}
+  .imprint h3{font:500 36px/1.1 'Cormorant Garamond',Georgia,serif}
+  .imprint p{grid-column:1;color:var(--muted);max-width:56ch}
+  .imprint .go{grid-row:1/3;grid-column:2;align-self:center;font-weight:500;white-space:nowrap;transition:transform .2s}
+  a.imprint:hover .go,a.imprint:focus-visible .go{transform:translateX(4px);color:var(--accent)}
+  a.imprint:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  footer{padding:32px 0 40px;font-size:14px;color:var(--muted)}
+  @media (max-width:560px){main{padding:64px 0 56px}.imprint{grid-template-columns:1fr}.imprint .go{grid-row:auto;grid-column:1}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="mark">Libo<span>.</span></div></div></header>
+<main class="wrap">
+  <h1>Books made for <em>everyday</em> life.</h1>
+  <p class="lede">Libo is a small independent publishing house. Each of our imprints has its own readers and its own voice, and every book is written, checked and printed with care.</p>
+  <p class="name">Li · Life &nbsp; Bo · Book &nbsp; Print</p>
+
+  <h2>Our imprints</h2>
+  <a class="imprint" href="https://bloom.liboprint.com/">
+    <h3>Bloom Editorial</h3>
+    <p>Workbooks, journals and Bible studies for women: faith, a calmer nervous system and perimenopause, one author for each theme.</p>
+    <span class="go">Visit Bloom &rarr;</span>
+  </a>
+</main>
+<footer><div class="wrap">&copy; <span id="y">2026</span> Libo. Our books are available on Amazon.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>

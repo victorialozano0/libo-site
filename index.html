@@ -4,59 +4,406 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Libo · Life, Books, Print</title>
-<meta name="description" content="Libo is a small independent publishing house. Its imprints make practical, carefully made books for everyday life.">
+<meta name="description" content="Libo is a small independent publishing house that makes books for the seasons of life nobody plans for. Its first imprint, Bloom Editorial, publishes workbooks and journals for women.">
 <link rel="canonical" href="https://liboprint.com/">
-<meta property="og:title" content="Libo · Life, Books, Print">
+<meta name="theme-color" content="#462B6A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Libo">
+<meta property="og:title" content="Libo · Books for the seasons nobody plans for">
 <meta property="og:description" content="A small independent publishing house and the home of Bloom Editorial.">
 <meta property="og:url" content="https://liboprint.com/">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F2A2E'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23F4EFE6'%3EL%3C/text%3E%3C/svg%3E">
+<meta property="og:image" content="https://liboprint.com/img/og-libo.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/libo-icon-32.png">
+<link rel="apple-touch-icon" href="/img/libo-icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Libo","url":"https://liboprint.com/",
+{"@context":"https://schema.org","@type":"Organization","name":"Libo","alternateName":"Libo Life Book","url":"https://liboprint.com/",
+ "logo":"https://liboprint.com/img/libo-icon-512.png",
+ "description":"A small independent publishing house that makes books for the seasons of life nobody plans for.",
  "subOrganization":[{"@type":"Organization","name":"Bloom Editorial","url":"https://bloom.liboprint.com/"}]}
 </script>
 <style>
-  :root{--ink:#1F2A2E;--muted:#5B6468;--paper:#F4EFE6;--line:#D9D1C3;--accent:#8A5A44}
+  :root{
+    --purple:#462B6A; --purple-deep:#2B1A42; --purple-soft:#7B62A3; --lilac:#CDBFE3;
+    --ink:#1F1830; --muted:#544B66; --paper:#FCFBFE; --tint:#F2EDF8; --line:#DDD4E9;
+    --r-lg:32px; --r-md:20px;
+    --z-nav:30;
+  }
   *{box-sizing:border-box;margin:0}
-  body{background:var(--paper);color:var(--ink);font:400 17px/1.65 'DM Sans',system-ui,sans-serif;min-height:100dvh;display:flex;flex-direction:column}
-  .wrap{width:100%;max-width:880px;margin:0 auto;padding:0 24px}
-  header{padding:40px 0 0}
-  .mark{font:600 30px/1 'Cormorant Garamond',Georgia,serif;letter-spacing:.02em}
-  .mark span{color:var(--accent)}
-  main.wrap{flex:1;padding-top:96px;padding-bottom:72px}
-  h1{font:500 clamp(40px,7vw,68px)/1.04 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em;max-width:14ch;text-wrap:balance}
-  h1 em{color:var(--accent)}
-  .lede{margin-top:28px;max-width:56ch;color:var(--muted);font-size:19px;text-wrap:pretty}
-  .name{margin-top:20px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  h2{margin-top:88px;font:500 14px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-bottom:16px;border-bottom:1px solid var(--line)}
-  .imprint{display:grid;grid-template-columns:1fr auto;gap:8px 32px;align-items:end;padding:32px 0;border-bottom:1px solid var(--line);color:inherit;text-decoration:none}
-  .imprint h3{font:500 36px/1.1 'Cormorant Garamond',Georgia,serif}
-  .imprint p{grid-column:1;color:var(--muted);max-width:56ch}
-  .imprint .go{grid-row:1/3;grid-column:2;align-self:center;font-weight:500;white-space:nowrap;transition:transform .2s}
-  a.imprint:hover .go,a.imprint:focus-visible .go{transform:translateX(4px);color:var(--accent)}
-  a.imprint:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-  footer{padding:32px 0 40px;font-size:14px;color:var(--muted)}
-  @media (max-width:560px){main.wrap{padding-top:64px;padding-bottom:56px}.imprint{grid-template-columns:1fr}.imprint .go{grid-row:auto;grid-column:1}}
+  html{scroll-behavior:smooth;scroll-padding-top:96px}
+  body{background:var(--paper);color:var(--ink);font:400 17px/1.7 'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit}
+  .wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 24px}
+  .skip{position:absolute;left:-999px;top:12px;background:#fff;padding:10px 16px;border-radius:10px;z-index:50}
+  .skip:focus{left:16px}
+  h1,h2,h3{font-family:'Outfit',system-ui,sans-serif;letter-spacing:-.018em;color:var(--ink);text-wrap:balance}
+  .eyebrow{font:600 13px/1 'Outfit',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--purple)}
+  .serif{font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400}
+  svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+  /* nav (floating) */
+  .nav{position:fixed;top:14px;left:16px;right:16px;z-index:var(--z-nav);pointer-events:none}
+  .nav-in{pointer-events:auto;max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;
+    background:rgba(252,251,254,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 10px 30px -18px rgba(70,43,106,.35)}
+  .nav-in > a img{height:34px;width:auto}
+  .nav nav{display:flex;gap:4px;font:500 15px 'Outfit',sans-serif}
+  .nav nav a{text-decoration:none;color:var(--muted);padding:10px 14px;border-radius:999px;transition:color .2s,background .2s}
+  .nav nav a:hover,.nav nav a:focus-visible{color:var(--purple);background:var(--tint)}
+  .pill{display:inline-flex;align-items:center;gap:8px;min-height:44px;background:var(--purple);color:#fff;text-decoration:none;font:600 15px 'Outfit',sans-serif;padding:0 20px;border-radius:999px;transition:background .2s,transform .2s;cursor:pointer}
+  .pill:hover,.pill:focus-visible{background:var(--purple-deep)}
+  .pill:active{transform:translateY(1px)}
+  :focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+
+  /* hero */
+  .hero{background:radial-gradient(120% 90% at 85% 10%,#5B3C86 0%,var(--purple) 45%,var(--purple-deep) 100%);color:#fff;border-radius:0 0 var(--r-lg) var(--r-lg);position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(to bottom,transparent,#000 40%,transparent);pointer-events:none}
+  .hero-in{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center;padding-top:168px;padding-bottom:120px}
+  .hero .eyebrow{color:var(--lilac)}
+  .hero h1{margin-top:22px;color:#fff;font-weight:600;font-size:clamp(40px,6vw,72px);line-height:1.02}
+  .hero h1 .serif{color:var(--lilac);font-weight:400;letter-spacing:-.01em}
+  .hero .lede{margin-top:26px;max-width:54ch;font-size:19px;color:#E6DEF2}
+  .hero-ctas{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+  .pill.light{background:#fff;color:var(--purple)}
+  .pill.light:hover,.pill.light:focus-visible{background:var(--tint)}
+  .ghost{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;font:500 15px 'Outfit',sans-serif;transition:background .2s,border-color .2s}
+  .ghost:hover,.ghost:focus-visible{background:rgba(255,255,255,.1);border-color:#fff}
+  .hero-logo{justify-self:end;width:min(100%,420px);opacity:.96}
+  .hero-key{margin-top:40px;display:flex;gap:10px;flex-wrap:wrap}
+  .hero-key span{font:500 14px 'Outfit',sans-serif;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);color:#fff}
+
+  section{padding:120px 0}
+  .head{max-width:680px}
+  .head h2{margin-top:16px;font-weight:600;font-size:clamp(32px,4.2vw,48px);line-height:1.08}
+  .head p{margin-top:18px;color:var(--muted);font-size:18px}
+  .chapter{display:flex;align-items:center;gap:14px}
+  .chapter b{font:600 13px 'Outfit',sans-serif;color:var(--purple);background:var(--tint);border-radius:999px;padding:6px 12px;letter-spacing:.08em}
+
+  /* 1 · moments */
+  .moments{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
+  .moments ul{list-style:none;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+  .moments li{font:400 clamp(22px,2.4vw,30px)/1.3 'Newsreader',Georgia,serif;font-style:italic;color:var(--ink);padding:22px 0;border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:baseline}
+  .moments li span{font:600 13px 'Outfit',sans-serif;font-style:normal;color:var(--purple-soft);min-width:28px}
+  .after-list{margin-top:28px;font:500 20px/1.5 'Outfit',sans-serif;color:var(--purple)}
+
+  /* 2 · manifesto */
+  .manifesto{background:var(--purple);color:#fff;border-radius:var(--r-lg);margin:0 16px}
+  .manifesto .wrap{max-width:900px;text-align:center}
+  .manifesto .eyebrow{color:var(--lilac)}
+  .big-quote{margin-top:28px;font:400 clamp(32px,4.6vw,56px)/1.15 'Newsreader',Georgia,serif;font-style:italic;letter-spacing:-.01em;text-wrap:balance}
+  .manifesto p.body{margin:32px auto 0;max-width:62ch;color:#E6DEF2;font-size:18px}
+  .manifesto p.body + p.body{margin-top:16px}
+
+  /* 3 · name */
+  .name{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .part{background:var(--tint);border-radius:var(--r-md);padding:36px 32px 38px}
+  .part .key{font:700 52px/1 'Outfit',sans-serif;color:var(--lilac);letter-spacing:-.03em}
+  .part .key b{color:var(--purple)}
+  .part h3{margin-top:24px;font-size:23px;font-weight:600}
+  .part p:not(.key){margin-top:12px;color:var(--muted);font-size:16.5px}
+
+  /* 4 · in your hands */
+  .hands{background:var(--tint)}
+  .feat{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .f{background:#fff;border-radius:var(--r-md);padding:30px 28px 32px;border:1px solid var(--line)}
+  .f .ic{width:52px;height:52px;border-radius:16px;background:var(--tint);color:var(--purple);display:grid;place-items:center}
+  .f h3{margin-top:22px;font-size:20px;font-weight:600}
+  .f p{margin-top:10px;color:var(--muted);font-size:16px}
+
+  /* 5 · the house */
+  .tiers{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:#fff}
+  .tier{padding:32px 28px 34px;position:relative}
+  .tier+.tier{border-left:1px solid var(--line)}
+  .tier .n{font:600 13px 'Outfit',sans-serif;color:#fff;background:var(--purple);width:32px;height:32px;border-radius:50%;display:grid;place-items:center}
+  .tier h3{margin-top:20px;font-size:22px;font-weight:600}
+  .tier p{margin-top:8px;font-size:16px;color:var(--muted)}
+  .tier .ex{margin-top:16px;font:500 14px 'Outfit',sans-serif;color:var(--purple)}
+
+  /* 6 · imprints */
+  .imprints{background:var(--tint)}
+  .grid{margin-top:64px;display:grid;grid-template-columns:1.35fr 1fr;gap:20px}
+  .card{background:#fff;border-radius:var(--r-md);padding:40px;display:flex;flex-direction:column;border:1px solid var(--line)}
+  .card.live{grid-row:span 2;text-decoration:none;cursor:pointer;transition:box-shadow .25s,border-color .25s}
+  .card.live:hover,.card.live:focus-visible{border-color:var(--purple-soft);box-shadow:0 24px 50px -28px rgba(70,43,106,.55)}
+  .status{align-self:flex-start;font:600 12px 'Outfit',sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:7px 11px;border-radius:8px}
+  .status.on{background:#E1F0E4;color:#2B6537}
+  .status.soon{background:var(--tint);color:var(--purple)}
+  .bloom-logo{margin-top:30px;width:300px}
+  .card .tag{margin-top:24px;font:400 24px/1.35 'Newsreader',Georgia,serif;font-style:italic;color:var(--ink)}
+  .card p{margin-top:12px;color:var(--muted)}
+  .authors{margin-top:26px;display:grid;gap:0;border-top:1px solid var(--line)}
+  .author{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .author b{font:600 16px 'Outfit',sans-serif;color:var(--ink)}
+  .author span{color:var(--muted);text-align:right}
+  .card .soon-line{margin-top:18px;font-size:15px;color:var(--purple)}
+  .card .go{margin-top:auto;padding-top:30px;font:600 16px 'Outfit',sans-serif;color:var(--purple);display:flex;align-items:center;gap:8px}
+  .card .go svg{transition:transform .2s}
+  .card.live:hover .go svg{transform:translateX(4px)}
+  .card.soon{background:rgba(255,255,255,.55);border:1.5px dashed #C9BCDD}
+  .card.soon h3{margin-top:20px;font-size:23px;font-weight:600}
+  .card.soon .ic{margin-top:24px;color:var(--purple-soft)}
+
+  /* 7 · promise */
+  .rules{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+  .rule .ic{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);color:var(--purple);display:grid;place-items:center}
+  .rule h3{margin-top:20px;font-size:22px;font-weight:600}
+  .rule p{margin-top:10px;color:var(--muted)}
+
+  /* closing */
+  .closing{padding:0 0 120px}
+  .closing-in{background:radial-gradient(100% 120% at 50% 0%,#5B3C86 0%,var(--purple) 55%,var(--purple-deep) 100%);border-radius:var(--r-lg);padding:88px 32px;text-align:center;color:#fff;display:flex;flex-direction:column;align-items:center;gap:34px}
+  .closing .quote{font:400 clamp(28px,3.8vw,44px)/1.2 'Newsreader',Georgia,serif;font-style:italic;max-width:24ch;text-wrap:balance}
+
+  footer{background:var(--purple-deep);color:#CFC4E0;padding:64px 0 52px;font-size:15px}
+  .foot-in{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
+  footer img{width:130px}
+  footer .tagline{margin-top:16px;font:400 18px 'Newsreader',Georgia,serif;font-style:italic;color:#E6DEF2}
+  footer a{color:#fff}
+  footer .right{text-align:right}
+  footer .right p+p{margin-top:6px}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+
+  @media (max-width:980px){
+    .hero-in{grid-template-columns:1fr;padding-top:132px;padding-bottom:80px;gap:36px}
+    .hero-logo{justify-self:start;width:240px;order:-1}
+    .moments{grid-template-columns:1fr;gap:40px}
+    .feat{grid-template-columns:1fr 1fr}
+    .tiers{grid-template-columns:1fr 1fr}
+    .tier:nth-child(3){border-left:0}
+    .tier:nth-child(n+3){border-top:1px solid var(--line)}
+    .grid{grid-template-columns:1fr}
+    .card.live{grid-row:auto}
+    .name,.rules{grid-template-columns:1fr}
+    .rules{gap:36px}
+    section{padding:84px 0}
+    .closing{padding-bottom:84px}
+  }
+  @media (max-width:640px){
+    .nav nav{display:none}
+    .nav-in{padding-left:16px}
+    .feat,.tiers{grid-template-columns:1fr}
+    .tier+.tier{border-left:0;border-top:1px solid var(--line)}
+    .card{padding:28px}
+    .bloom-logo{width:220px}
+    .author{flex-direction:column;gap:2px}
+    .author span{text-align:left}
+    .manifesto{margin:0 8px}
+    .foot-in{grid-template-columns:1fr}
+    footer .right{text-align:left}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important}
+    .rv{opacity:1;transform:none}
+  }
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="mark">Libo<span>.</span></div></div></header>
-<main class="wrap">
-  <h1>Books made for <em>everyday</em> life.</h1>
-  <p class="lede">Libo is a small independent publishing house. Each of our imprints has its own readers and its own voice, and every book is written, checked and printed with care.</p>
-  <p class="name">Li · Life &nbsp; Bo · Book &nbsp; Print</p>
+<a class="skip" href="#main">Skip to content</a>
 
-  <h2>Our imprints</h2>
-  <a class="imprint" href="https://bloom.liboprint.com/">
-    <h3>Bloom Editorial</h3>
-    <p>Workbooks, journals and Bible studies for women: faith, a calmer nervous system and perimenopause, one author for each theme.</p>
-    <span class="go">Visit Bloom &rarr;</span>
-  </a>
+<header class="nav">
+  <div class="nav-in">
+    <a href="/" aria-label="Libo, home"><img src="/img/libo-logo.png" width="1200" height="804" alt="Libo, life book"></a>
+    <nav aria-label="Main">
+      <a href="#why">Why Libo</a>
+      <a href="#house">The house</a>
+      <a href="#imprints">Imprints</a>
+      <a href="#promise">Our promise</a>
+    </nav>
+    <a class="pill" href="https://bloom.liboprint.com/">Visit Bloom</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <p class="eyebrow">An independent publishing house</p>
+        <h1>Books for the seasons <span class="serif">nobody plans for.</span></h1>
+        <p class="lede">Libo makes books for the days when life asks more of you than usual. They are written with care, printed on paper and made with room for your own words, so they can stay beside you for as long as the season lasts.</p>
+        <div class="hero-ctas">
+          <a class="pill light" href="#why">Read our story</a>
+          <a class="ghost" href="https://bloom.liboprint.com/">Meet Bloom Editorial</a>
+        </div>
+        <p class="hero-key" aria-label="What the name means"><span><b>Li</b> · Life</span><span><b>Bo</b> · Book</span><span>Print</span></p>
+      </div>
+      <img class="hero-logo" src="/img/libo-logo-white.png" width="1200" height="804" alt="" aria-hidden="true">
+    </div>
+  </div>
+
+  <!-- 1 · the moment -->
+  <section id="why">
+    <div class="wrap moments">
+      <div class="head rv">
+        <p class="chapter"><b>01</b><span class="eyebrow">Where it begins</span></p>
+        <h2>Every Libo book starts with a moment like these.</h2>
+        <p>Not the big milestones people celebrate. The quiet, heavy ones that arrive without warning and change the shape of an ordinary week.</p>
+      </div>
+      <div class="rv">
+        <ul>
+          <li><span>i.</span>The thoughts that won't settle at three in the morning.</li>
+          <li><span>ii.</span>The body that suddenly feels like someone else's.</li>
+          <li><span>iii.</span>The prayer you want to say and can't find the words for.</li>
+          <li><span>iv.</span>The news you are still taking in, days later.</li>
+          <li><span>v.</span>The calm you used to have and can't seem to find.</li>
+        </ul>
+        <p class="after-list">That is where our books begin: right there, with you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · manifesto -->
+  <section class="manifesto">
+    <div class="wrap rv">
+      <p class="eyebrow">Why Libo exists</p>
+      <p class="big-quote">A book can't change your season. It can keep you company through it.</p>
+      <p class="body">Hard seasons are lonely in a particular way. Advice is everywhere, and most of it asks you to be further along than you are. We wanted to make the opposite: books that meet you where you are, give you one small thing to do today, and let you go at your own pace.</p>
+      <p class="body">That's the whole idea behind Libo. Not to fix anyone. To make sure nobody has to sit with a hard season holding nothing but their phone.</p>
+    </div>
+  </section>
+
+  <!-- 3 · the name -->
+  <section>
+    <div class="wrap">
+      <div class="head rv">
+        <p class="chapter"><b>02</b><span class="eyebrow">Life · Book · Print</span></p>
+        <h2>Our name is our promise, in three words.</h2>
+      </div>
+      <div class="name">
+        <article class="part rv"><p class="key"><b>Li</b>fe</p><h3>It starts with real life.</h3><p>Not the tidy version. The tired mornings, the waiting rooms, the questions you only ask yourself when the house is quiet. Every book begins with a real season and the people living through it.</p></article>
+        <article class="part rv"><p class="key"><b>Bo</b>ok</p><h3>A book is patient.</h3><p>It waits on the nightstand until you're ready. It doesn't send notifications, keep score or ask you to keep a streak. You can close it for a week and pick it up exactly where you left off.</p></article>
+        <article class="part rv"><p class="key">Print</p><h3>Paper you can make your own.</h3><p>Underline it, fold the corners, write in the margins. What you write by hand stays on a page you can return to whenever you want to see how far you've come.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · in your hands -->
+  <section class="hands">
+    <div class="wrap">
+      <div class="head rv">
+        <p class="chapter"><b>03</b><span class="eyebrow">In your hands</span></p>
+        <h2>What it feels like to open a Libo book.</h2>
+        <p>Whatever the imprint or the subject, our books are built the same way: around you, your energy that day, and your own words.</p>
+      </div>
+      <div class="feat">
+        <article class="f rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span><h3>Room for your words</h3><p>Lines, boxes and open space to think on paper. Your answers become part of the book.</p></article>
+        <article class="f rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span><h3>One small step today</h3><p>Short practices sized for a hard day. Something you can actually do with the energy you have.</p></article>
+        <article class="f rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><h3>Your own pace</h3><p>No streaks to break and no score to keep. Miss a day or a month; the book will still be there.</p></article>
+        <article class="f rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><h3>Something new each chapter</h3><p>Write, trace, map, sort or plan. We vary the practices from chapter to chapter instead of repeating the same page.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · the house -->
+  <section id="house">
+    <div class="wrap">
+      <div class="head rv">
+        <p class="chapter"><b>04</b><span class="eyebrow">How the house works</span></p>
+        <h2>One house, several imprints, one author for each theme.</h2>
+        <p>Libo holds everything together. The imprints are what readers meet. Inside each imprint, every author writes about one subject only, so the books stay focused and the voice stays the same from one book to the next.</p>
+      </div>
+      <div class="tiers rv">
+        <div class="tier"><span class="n">1</span><h3>Libo</h3><p>The house. It owns the imprints and sets the standards every book has to meet.</p><p class="ex">liboprint.com</p></div>
+        <div class="tier"><span class="n">2</span><h3>Imprints</h3><p>Each imprint serves one group of readers, with its own look, its own website and its own catalog.</p><p class="ex">Bloom Editorial</p></div>
+        <div class="tier"><span class="n">3</span><h3>Authors</h3><p>One author for each theme, so readers can follow the voice they trust from one book to the next.</p><p class="ex">Hannah Grace, Maya Chen, Claire Harmon</p></div>
+        <div class="tier"><span class="n">4</span><h3>Books</h3><p>Workbooks, journals and studies, in print and on Kindle, each built around practices made for that book.</p><p class="ex">Available on Amazon</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · imprints -->
+  <section class="imprints" id="imprints">
+    <div class="wrap">
+      <div class="head rv">
+        <p class="chapter"><b>05</b><span class="eyebrow">Our imprints</span></p>
+        <h2>Different rooms in the same house.</h2>
+        <p>Each imprint is a room made for one kind of reader, with its own voice and its own way of keeping you company. We open a new room only when there is someone new to welcome. One is open today, and two more are being built.</p>
+      </div>
+      <div class="grid">
+        <a class="card live rv" href="https://bloom.liboprint.com/">
+          <span class="status on">Open now</span>
+          <img class="bloom-logo" src="/img/bloom-logo.png" width="720" height="240" alt="Bloom Editorial">
+          <p class="tag">Gentle books for women in the seasons nobody plans for.</p>
+          <p>Workbooks, journals and Bible studies that are practical, warm and honest about what a book can and can't do. Each Bloom author writes for one season of life.</p>
+          <div class="authors">
+            <div class="author"><b>Hannah Grace</b><span>Faith, prayer and Scripture</span></div>
+            <div class="author"><b>Maya Chen</b><span>A calmer nervous system</span></div>
+            <div class="author"><b>Claire Harmon</b><span>Perimenopause, one symptom per book</span></div>
+          </div>
+          <p class="soon-line">Coming soon to Bloom: illustrated stories for girls and the grown-ups who love them.</p>
+          <span class="go">Visit Bloom Editorial <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+        <article class="card soon rv">
+          <span class="status soon">Being built</span>
+          <span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+          <h3>Books in Spanish</h3>
+          <p>A home for Spanish-speaking readers, with books written in Spanish from the first page, not translated. The same care, in the language you feel in.</p>
+        </article>
+        <article class="card soon rv">
+          <span class="status soon">Being built</span>
+          <span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/></svg></span>
+          <h3>Activity and puzzle books</h3>
+          <p>For anyone who likes to keep their hands and mind busy: books to solve, color and fill in, away from a screen, a page at a time.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · promise -->
+  <section id="promise">
+    <div class="wrap">
+      <div class="head rv">
+        <p class="chapter"><b>06</b><span class="eyebrow">Our promise to every reader</span></p>
+        <h2>When you're struggling, you deserve the truth and a little care.</h2>
+        <p>Someone who picks up one of our books is often tired, worried or hurting. That is exactly why every book, in every imprint, keeps the same three promises.</p>
+      </div>
+      <div class="rules">
+        <article class="rule rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><h3>We tell you the truth</h3><p>We check studies, figures and quotations against their original sources before they go to print, and we leave out what we can't verify. No invented experts, no easy miracles.</p></article>
+        <article class="rule rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><h3>We make it for you</h3><p>We design the exercises and drawings for each title and vary them from chapter to chapter. Small things to do, sized for a hard day.</p></article>
+        <article class="rule rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></span><h3>We know our place</h3><p>We describe only what is inside the book. Our books on health and feelings can sit beside care from a doctor or counselor; they never replace it.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <div class="closing-in rv">
+        <p class="quote">Wherever you are in your season, there is a page here with room for you.</p>
+        <a class="pill light" href="https://bloom.liboprint.com/">Find your book at Bloom Editorial <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div class="wrap">&copy; <span id="y">2026</span> Libo. Our books are available on Amazon.</div></footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>
+      <img src="/img/libo-logo-white.png" width="1200" height="804" alt="Libo">
+      <p class="tagline">Books for the seasons nobody plans for.</p>
+    </div>
+    <div class="right">
+      <p>Imprints: <a href="https://bloom.liboprint.com/">Bloom Editorial</a></p>
+      <p>&copy; <span id="y">2026</span> Libo. Our books are available on Amazon.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  (function () {
+    var els = document.querySelectorAll('.rv');
+    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      els.forEach(function (e) { e.classList.add('in'); }); return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (e, i) { e.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(e); });
+  })();
+</script>
 </body>
 </html>
